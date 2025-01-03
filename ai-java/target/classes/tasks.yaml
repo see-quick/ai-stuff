@@ -1,0 +1,18 @@
+# src/main/resources/tasks.yaml
+research_task:
+  description: >
+    Conduct a thorough research about {topic}
+    The current year is 2024.
+  expectedOutput: >
+    A list with 10 bullet points of the most relevant
+    information about {topic}
+  agent: researcher
+
+reporting_task:
+  description: >
+    Expand each bullet point into a full section for a report.
+  expectedOutput: >
+    A fully fledged report with the main topics, each with
+    a full section of info. Formatted as markdown.
+  agent: reporting_analyst
+  outputFile: report.md

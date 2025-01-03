@@ -4,23 +4,30 @@ import io.github.ollama4j.OllamaAPI;
 import io.github.ollama4j.exceptions.OllamaBaseException;
 import io.github.ollama4j.models.response.OllamaResult;
 import io.github.ollama4j.utils.OptionsBuilder;
+import org.example.config.AgentConfig;
 
 import java.io.IOException;
 
-public abstract class Agent {
-    protected final OllamaAPI api;
-    protected final String model;
-    protected final String rolePrompt;
 
-    public Agent(OllamaAPI api, String model, String rolePrompt) {
+public class Agent {
+    private final AgentConfig config;
+    private final OllamaAPI api;
+    private final String model;
+
+    public Agent(AgentConfig config, OllamaAPI api, String model) {
+        this.config = config;
         this.api = api;
         this.model = model;
-        this.rolePrompt = rolePrompt;
     }
 
-    public String respond(String userPrompt) throws OllamaBaseException, IOException, InterruptedException {
-        String prompt = rolePrompt + "\n\nUser: " + userPrompt + "\nAgent:";
-        OllamaResult result = api.generate(model, prompt, false, new OptionsBuilder().build());
+    public String run(String prompt) throws OllamaBaseException, IOException, InterruptedException {
+        // Prepare final prompt using placeholders
+        String finalPrompt = String.format(
+            "%s\n\nGoal: %s\nBackstory: %s\nUser Prompt: %s",
+            this.config.role(), this.config.goal(), this.config.backstory(), prompt
+        );
+
+        OllamaResult result = api.generate(model, finalPrompt, false, new OptionsBuilder().build());
         return result.getResponse();
     }
 }

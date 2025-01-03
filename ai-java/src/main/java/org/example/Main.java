@@ -7,18 +7,23 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws OllamaBaseException, IOException, InterruptedException {
-        final String modelName = "llama3.2:1b";
-
+        // Start Ollama (server must be running)
         OllamaAPI api = new OllamaAPI("http://localhost:11434/");
         api.setRequestTimeoutSeconds(60);
 
-        ResearcherAgent researcher = new ResearcherAgent(api, modelName);
-        SoftwareEngineerAgent engineer = new SoftwareEngineerAgent(api, modelName);
+        if (api.ping()) {
+            System.out.println("Ollamma server is running...");
 
-        System.out.println("Researcher says: " +
-            researcher.respond("What are the latest findings in AI?"));
+            // Model can be "llama2", "llama2:7B", etc.
+            String model = "llama3.2:1b";
 
-        System.out.println("Software Engineer says: " +
-            engineer.respond("How do I implement a REST API in Java?"));
+            CrewOrchestrator orchestrator = new CrewOrchestrator(api, model);
+
+            // Kick off tasks with your "topic"
+            String topic = "AI Agents";
+            orchestrator.kickoff(topic);
+        } else {
+            System.err.println("Olamma is not running make sure you do `ollama serve`");
+        }
     }
 }
