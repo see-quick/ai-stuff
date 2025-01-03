@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68447065-f84d-452e-a967-7b41c2bfe40a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ai-java/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/src/main/java/org/example/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-java/src/main/java/org/example/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-java/src/main/java/org/example/CrewOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/src/main/java/org/example/ResearcherAgent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/src/main/java/org/example/SoftwareEngineerAgent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/ai-java/target/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/target/classes/org/example/ResearcherAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/target/classes/org/example/SoftwareEngineerAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-java/target/classes/org/example/agents/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/ai-java/target/classes/org/example/agents/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
